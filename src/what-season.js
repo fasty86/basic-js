@@ -23,18 +23,16 @@ function getSeason(date = null) {
   //   Object.getOwnPropertyNames(Object.getPrototypeOf(new Date())).length !=
   //     Object.getOwnPropertyNames(Object.getPrototypeOf(date)).length
   // )
-  if (date instanceof Date) {
-    if (date.getMonth() <= 1 || date.getMonth() == 11) {
-      return SEASONS[0]
-    }
-    if (date.getMonth() <= 4) {
-      return SEASONS[1]
-    }
-    if (date.getMonth() <= 7) {
-      return SEASONS[2]
-    }
-    return SEASONS[3]
-  } else throw new Error(`Invalid date!`)
+  if (date.getMonth() <= 1 || date.getMonth() == 11) {
+    return SEASONS[0]
+  }
+  if (date.getMonth() <= 4) {
+    return SEASONS[1]
+  }
+  if (date.getMonth() <= 7) {
+    return SEASONS[2]
+  }
+  return SEASONS[3]
 }
 function dateIsValid(date) {
   const propAll = Object.getOwnPropertyNames(new Date())
